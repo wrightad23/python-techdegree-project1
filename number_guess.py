@@ -7,14 +7,12 @@ def guess(guess_number):
     if guess_number < gen_number:
       x += 1
       print("Ouch! That's too low! Keep guessin'!")
-      print(gen_number) #remove after testing
       guess_number = input("What is your new guess? ")
       guess_number = int(guess_number)
       continue
     elif guess_number > gen_number:
       x += 1
       print("Wowza! That's too high! Keep guessin'!")
-      print(gen_number) #remove after testing
       guess_number = input("What is your new guess? ")
       guess_number = int(guess_number)
       continue
@@ -24,18 +22,20 @@ def guess(guess_number):
       if x == 1:
         print("It only took you a single try to get it right!")
       else:
-        print("It took you {} tries to guess correctly! Try to be your high score!")
-    again = input("Would you like to play again? yes/no: ")
-    if again.lower() == "yes":
-      guess()
-    else:
-      print("Thank you for playing!")
-      break
+        print("It took you {} tries to guess correctly! Try to be your high score!".format(x))
+#    again = input("Would you like to play again? yes/no: ")
+#    if again.lower() == "yes":
+#      print("I'm so sorry, I thought I was ready to handle this. Alas, I am not. Good luck though!")
+#      break
+#    else:
+#      print("Thank you for playing!")
+#      break
 
-print("Welcome to the Guessing-est Guess Game of them all!\nWe are going to play a little game where you - the player - try to guess the exact number we are thinking of!\nGood luck!")
+
 import random
 import time
-print("We are now thinking of a number...")
+print("Welcome to the Guessing-est Guess Game of them all!\nWe are going to play a little game where you - the player - try to guess the exact number we are thinking of!\nGood luck!")
+print("We are now thinking of a number from 1 to 10...")
 gen_number = random.randrange(1, 11)  #randomly generated number
 time.sleep(3)
 print("Ok! Got it! Now it's your turn!")
